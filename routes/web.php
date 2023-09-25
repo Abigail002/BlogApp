@@ -18,11 +18,13 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
+Route::middleware(['guest'])->group(function(){
+    Route::get('/login', function () {
+        return view('auth.login');
+    })->name('login');
+    Route::get('/register', [UserController::class, 'create'])->name('post.create');
 });
 
-Route::get('/register',[UserController::class, 'create'])->name('post.create');
 
 Route::get('/forgotPassword', function () {
     return view('auth.forgot-password');
