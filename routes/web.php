@@ -25,6 +25,12 @@ Route::middleware(['guest'])->group(function(){
     Route::get('/register', [UserController::class, 'create'])->name('post.create');
 });
 
+Route::middleware(['auth'])->group(function(){
+    Route::get('/add/post', function () {
+        return view('add.post');
+    })->name('post');
+    Route::get('/register', [UserController::class, 'create'])->name('post.create');
+});
 
 Route::get('/forgotPassword', function () {
     return view('auth.forgot-password');
