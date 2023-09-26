@@ -11,7 +11,7 @@
                         <h3 class="text-white mb-2">Blog Posts</h3>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-center fs-sm">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Blog Posts</li>
                             </ol>
                         </nav>
@@ -21,9 +21,15 @@
 
 
             <!-- Blog -->
-            <section class="pt-20 pb-10 pt-lg-30 pb-lg-15">
+            <section class="pt-20 pb-10 pt-lg-20 pb-lg-15">
                 <div class="container">
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-6 gy-10 gy-lg-16">
+                    @auth
+                        <x-cta-button url='/add/post'>
+                            Add New Post
+                        </x-cta-button>
+                    @endauth
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-6 gy-10 gy-lg-16 pt-lg-15">
+
                         <div class="col">
                             <div class="blog-card card border-0">
                                 <div
@@ -266,8 +272,7 @@
                 <div class="container">
                     <div class="rounded-5 border position-relative z-1 bg-dark-blue-4">
                         <div class="animate-scale position-absolute w-full h-full z-n1">
-                            <img src="/shapes/blurry-shape-4.svg" alt=""
-                                class="bg-shape img-fluid" />
+                            <img src="/shapes/blurry-shape-4.svg" alt="" class="bg-shape img-fluid" />
                         </div>
                         <div class="row justify-center">
                             <div class="col-lg-10">
