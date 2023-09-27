@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,14 +23,12 @@ Route::middleware(['guest'])->group(function(){
     Route::get('/login', function () {
         return view('auth.login');
     })->name('login');
-    Route::get('/register', [UserController::class, 'create'])->name('post.create');
+    Route::get('/register', [UserController::class, 'create'])->name('user.create');
 });
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/add/post', function () {
-        return view('add.post');
-    })->name('post');
-    Route::get('/register', [UserController::class, 'create'])->name('post.create');
+    Route::get('/add/post',[PostController::class, 'create'])->name('post.create');
+    //Route::get('/register', [UserController::class, 'create'])->name('post.create');
 });
 
 Route::get('/forgotPassword', function () {
