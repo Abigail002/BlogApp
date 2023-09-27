@@ -21,27 +21,45 @@
                 class="navbar-content-inner ms-lg-auto d-flex flex-column flex-lg-row align-lg-center gap-4 gap-lg-10 p-2 p-lg-0">
                 <ul class="navbar-nav gap-lg-2 gap-xl-5">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link  " href="/" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Home
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html">Home one</a></li>
-                            <li><a class="dropdown-item" href="index-lite.html">Home one lite</a></li>
-                            <li><a class="dropdown-item" href="index-2.html">Home two</a></li>
-                            <li><a class="dropdown-item" href="index-2-lite.html">Home two lite</a></li>
-                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
+                    @auth
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="/" role="button" aria-expanded="false">
+                                Post
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">List</a></li>
+                                <li><a class="dropdown-item" href="index-lite.html">Add New</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="/" role="button" aria-expanded="false">
+                                Category
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">List</a></li>
+                                <li><a class="dropdown-item" href="index-lite.html">Add New</a></li>
+                            </ul>
+                        </li>
+                    @endauth
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                    @endguest
                 </ul>
+
                 <div class="">
                     @auth
-                    <form action="{{ url('/logout') }}" method="POST">
-                        @csrf
-                        <button class="btn btn-outline-primary-dark">Deconnexion</button>
-                    </form>
+                        <form action="{{ url('/logout') }}" method="POST">
+                            @csrf
+                            <button class="btn btn-outline-primary-dark">Logout</button>
+                        </form>
                     @endauth
 
                     @guest
