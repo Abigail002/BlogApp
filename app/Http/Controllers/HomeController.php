@@ -15,11 +15,4 @@ class HomeController extends Controller
 
         return view('app', ['categories' => $categories]);
     }
-
-    public function showControllers()
-    {
-        $categories = Category::all();
-        view()->share('categories', $categories);
-        return view('layouts.Partials.navbar');
-    }
 }

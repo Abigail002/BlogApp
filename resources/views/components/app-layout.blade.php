@@ -1,10 +1,10 @@
 <x-base-layout>
     <div class="wrapper d-flex flex-column justify-between">
         <!-- Navbar -->
-        @include('layouts.partials.navbar')
+        @include('layouts.partials.navbar',['categories'=>$categories])
 
         <main class="flex-grow-1">
-            @yield('content')
+            {{ $slot }}
         </main>
 
         <!-- Footer -->
