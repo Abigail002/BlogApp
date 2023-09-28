@@ -28,13 +28,10 @@
                     </li>
                     @auth
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle " href="/" role="button" aria-expanded="false">
-                                Post
+                            <a class="nav-link  " href="/" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                My Posts
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="index.html">List</a></li>
-                                <li><a class="dropdown-item" href="index-lite.html">Add New</a></li>
-                            </ul>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -42,8 +39,9 @@
                                 Category
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="index.html">List</a></li>
-                                <li><a class="dropdown-item" href="index-lite.html">Add New</a></li>
+                                @foreach ($categories as $category)
+                                    <li><a class="dropdown-item" href="index-lite.html">{{ $category->name }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                     @endauth
