@@ -46,28 +46,6 @@
                                     placeholder="Unlocking the Power of AI: A Comprehensive Guide" required />
                             </div>
                         </div>
-                        <div class="">
-                            <label for="categories" class="form-label fs-lg fw-medium mb-4">
-                                Post Category
-                            </label>
-                            <div class="input-group with-icon">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64">
-                                        <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2">
-                                            <path
-                                                d="M32 10.667 10.667 21.333 32 32l21.333-10.667L32 10.667ZM10.667 32 32 42.667 53.333 32M10.667 42.667 32 53.333l21.333-10.666" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <select id="categories" name="categories" class="form-control rounded-2" required>
-                                    <option value="" disabled selected>Select Post Category</option>
-                                    <option value="1AI">AI</option>
-                                    <option value="Marketing">Marketing</option>
-                                    <!-- Add more options as needed -->
-                                </select>
-                            </div>
-                        </div>
                         <style>
                             /* Sélectionnez le texte à l'intérieur de CKEditor et appliquez le style désiré */
                             .ck-content {
@@ -116,8 +94,6 @@
 
                 </div>
             </section>
-
-
         </main>
 
         <!-- Footer -->
