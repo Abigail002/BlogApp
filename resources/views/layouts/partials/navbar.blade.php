@@ -26,6 +26,16 @@
                             Home
                         </a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="/" role="button" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach ($categories as $category)
+                                <li><a class="dropdown-item" href="index-lite.html">{{ $category->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
                     @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link  " href="/" role="button" data-bs-toggle="dropdown"
@@ -33,19 +43,8 @@
                                 My Posts
                             </a>
                         </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle " href="/" role="button" aria-expanded="false">
-                                Category
-                            </a>
-                            <ul class="dropdown-menu">
-                                @foreach ($categories as $category)
-                                    <li><a class="dropdown-item" href="index-lite.html">{{ $category->name }}</a></li>
-                                @endforeach
-                            </ul>
-                        </li>
-                    @endauth
-                    @guest
+                        @endauth
+                        @guest
                         <li class="nav-item">
                             <a class="nav-link" href="/login">Login</a>
                         </li>
