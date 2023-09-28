@@ -21,7 +21,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
         return view('auth.register');
     }
 
@@ -30,7 +29,6 @@ class UserController extends Controller
      */
     public function store( $request)
     {
-        //
         User::create([
             "name" => $request->name,
             "email" => $request->email,

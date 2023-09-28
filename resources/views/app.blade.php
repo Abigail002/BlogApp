@@ -23,6 +23,10 @@
             <!-- Blog -->
             <section class="pt-20 pb-10 pt-lg-20 pb-lg-15">
                 <div class="container">
+                    @foreach ($categories as $category)
+                    <div>{{ $category->name }}</div>
+                    @endforeach
+
                     @auth
                         <x-cta-button url='/add/post'>
                             Add New Post
