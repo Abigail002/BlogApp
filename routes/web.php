@@ -26,8 +26,11 @@ Route::middleware(['guest'])->group(function(){
 });
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/add/post',[PostController::class, 'create'])->name('post.create');
-    //Route::get('/register', [UserController::class, 'create'])->name('post.create');
+/*     Route::get('/add/post',[PostController::class, 'create'])->name('post.create');
+    Route::post('/add/post',[PostController::class, 'store'])->name('post.store');
+    Route::get('/post/list', [UserController::class, 'index'])->name('post.list');
+ */
+    Route::resource('posts',PostController::class);
 });
 
 Route::get('/forgotPassword', function () {

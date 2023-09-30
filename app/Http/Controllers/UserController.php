@@ -4,16 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Requests\p;
 
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+   public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('post.list',['users' => $users]);
     }
 
     /**

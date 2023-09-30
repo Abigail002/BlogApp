@@ -1,3 +1,5 @@
 import './bootstrap';
 
-import './main'
+import './main';
+
+import '@grafikart/drop-files-element'

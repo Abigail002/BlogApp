@@ -1,8 +1,5 @@
-<x-base-layout>
+<x-app-layout>
     <div class="wrapper d-flex flex-column justify-between">
-        <!-- Navbar -->
-        @include('layouts.partials.navbar')
-
         <main class="flex-grow-1">
             <!-- Page Header -->
             <section class="py-10 py-lg-15 bg-striped">
@@ -21,12 +18,14 @@
 
             <div class="row justify-center mt-18" data-aos="fade-up-sm" data-aos-delay="50">
                 <div class="col-lg-8 col-xl-6">
-                    <form class="vstack gap-8" id="contact-form" method="post" action="assets/php/contact_email.php">
+                    <form class="vstack gap-8" method="post" action="{{ route('posts.store') }}"
+                        enctype="multipart/form-data">
+                        @csrf
                         <div class="">
                             <label for="image" class="form-label fs-lg fw-medium mb-4"> Post Image* </label>
                             <div class="input-group with-icon">
-                                <input type="file" id="image" name="image" class="form-control rounded-2"
-                                    placeholder="Unlocking the Power of AI: A Comprehensive Guide" required />
+                                <input type="file" name="image" label="Drop files here or click to upload."
+                                    help="Upload files here and they won't be sent immediately" is="drop-files" />
                             </div>
                         </div>
 
@@ -43,9 +42,21 @@
                                     </svg>
                                 </span>
                                 <input type="text" id="title" name="title" class="form-control rounded-2"
-                                    placeholder="Unlocking the Power of AI: A Comprehensive Guide" required />
+                                    placeholder="Unlocking the Power of AI: A Comprehensive Guide" />
                             </div>
                         </div>
+
+                        <x-select-field label="Post Category" name='category_id' placeholder="Select The Post Category"
+                            :options="$categories">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64">
+                                <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2">
+                                    <path
+                                        d="M32 10.667 10.667 21.333 32 32l21.333-10.667L32 10.667ZM10.667 32 32 42.667 53.333 32M10.667 42.667 32 53.333l21.333-10.666" />
+                                </g>
+                            </svg>
+                        </x-select-field>
+
                         <style>
                             /* Sélectionnez le texte à l'intérieur de CKEditor et appliquez le style désiré */
                             .ck-content {
@@ -63,19 +74,17 @@
                                 Content*
                             </label>
                             <textarea id="content" name="content" class="form-control rounded-2" placeholder="Write here your post content"
-                                rows="4" required></textarea>
+                                rows="4"></textarea>
                         </div>
+
                         <div class="">
-                            <form action="{{ url('/logout') }}" method="POST">
-                                @csrf
-                                <button class="btn btn-outline-primary-dark" type="submit">Add Post</button>
-                            </form>
+                            <button class="btn btn-outline-primary-dark" type="submit">Add Post</button>
                         </div>
                         <div class="status alert mb-0 d-none"></div>
                     </form>
                 </div>
             </div>
-
+            <script type="module" src="//unpkg.com/@grafikart/drop-files-element"></script>
             <script>
                 ClassicEditor
                     .create(document.querySelector('#content'))
@@ -95,8 +104,5 @@
                 </div>
             </section>
         </main>
-
-        <!-- Footer -->
-        @include('layouts.partials.footer')
     </div>
-</x-base-layout>
+</x-app-layout>
