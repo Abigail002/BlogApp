@@ -18,7 +18,7 @@
     <section class="pt-20 pb-10 pt-lg-20 pb-lg-15">
         <div class="container">
             @auth
-                <x-cta-button url='/add/post'>
+                <x-cta-button url="{{ route('posts.create') }}">
                     Add New Post
                 </x-cta-button>
             @endauth

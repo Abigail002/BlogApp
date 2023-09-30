@@ -38,7 +38,7 @@
                     </li>
                     @auth
                         <li class="nav-item dropdown">
-                            <a class="nav-link  " href="/" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link  " href="{{ route('posts.index') }}" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 My Posts
                             </a>

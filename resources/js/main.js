@@ -26,6 +26,7 @@ Last Update: 9 May 2023
 import AOS from "aos";
 import VenoBox from "venobox";
 import Swiper from "swiper";
+import Headroom from "headroom.js";
 
 (function () {
 	// 1. AOS initialization

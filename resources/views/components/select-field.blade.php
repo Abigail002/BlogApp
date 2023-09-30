@@ -17,7 +17,7 @@
                 @endforeach
             @endif
         </select>
-        @error()
+        @error($name)
             <div @class(['d-one', 'is-valid' => $errors->has($name)])></div>
             <span class="invalid-feedback text-danger">{{ $message }}</span>
         @enderror
