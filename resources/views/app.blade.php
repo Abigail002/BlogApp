@@ -23,202 +23,15 @@
                 </x-cta-button>
             @endauth
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-6 gy-10 gy-lg-16 pt-lg-15">
-
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/1.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>Design</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
-
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Best free AI content generator & AI writers for 2023</a>
-                            </h4>
-                        </div>
+                @forelse ($posts as $post)
+                    <x-post-card name="{{ $post->category->name }}" date="{{ $post->created_at }}"
+                        title="{{ $post->title }}" author="{{ $post->user->name }}"></x-post-card>
+                @empty
+                    <div class="center py-10 py-lg-15 bg-striped">
+                        <h3 class="text-white mb-2">Aucun Post</h3>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/2.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>ChatGPT</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
+                @endforelse
 
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Using AI to Write Articles: how I churn out 2000
-                                    words</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/3.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>AI Tool</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
-
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Free AI content generator tools and free-forever AI
-                                    writers in 2023</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/4.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>Design</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
-
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Best free AI content generator & AI writers for 2023</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/5.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>ChatGPT</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
-
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Using AI to Write Articles: how I churn out 2000
-                                    words</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/6.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>AI Tool</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
-
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Free AI content generator tools and free-forever AI
-                                    writers in 2023</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/7.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>Design</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
-
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Best free AI content generator & AI writers for 2023</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/8.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>ChatGPT</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
-
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Using AI to Write Articles: how I churn out 2000
-                                    words</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="blog-card card border-0">
-                        <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-                            <a href="article.html" class="d-block">
-                                <img src="/thumbnails/9.jpg" alt=""
-                                    class="img-fluid post-thumbnail w-full h-full object-cover" />
-                            </a>
-                        </div>
-                        <div class="card-body p-0 mt-6">
-                            <ul class="list-unstyled d-flex flex-wrap align-center fs-sm meta-list">
-                                <li>AI Tool</li>
-                                <li>14 March 2023</li>
-                                <li>5 Min. Read</li>
-                            </ul>
-
-                            <h4 class="post-title fw-medium mb-0">
-                                <a href="article.html">Free AI content generator tools and free-forever AI
-                                    writers in 2023</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="text-center mt-18">
@@ -226,22 +39,22 @@
                     <li class="page-item">
                         <a class="page-link disabled" href="#" aria-label="Previous">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                viewBox="0 0 24 24" width="24" height="24">
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                width="24" height="24">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <path d="M5 12h14M5 12l4 4m-4-4 4-4" />
                             </svg>
                         </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link active" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link " href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">...</a></li>
                     <li class="page-item"><a class="page-link" href="#">10</a></li>
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Next">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                viewBox="0 0 24 24" width="24" height="24">
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                width="24" height="24">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <path d="M5 12h14m-4 4 4-4m-4-4 4 4" />
                             </svg>

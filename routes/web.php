@@ -18,19 +18,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::middleware(['guest'])->group(function(){
+Route::middleware(['guest'])->group(function () {
     Route::get('/login', function () {
         return view('auth.login');
     })->name('login');
     Route::get('/register', [UserController::class, 'create'])->name('user.create');
 });
 
-Route::middleware(['auth'])->group(function(){
-/*     Route::get('/add/post',[PostController::class, 'create'])->name('post.create');
-    Route::post('/add/post',[PostController::class, 'store'])->name('post.store');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/auth/post', [PostController::class, 'authPost'])->name('auth.post');
+    /*Route::post('/add/post',[PostController::class, 'store'])->name('post.store');
     Route::get('/post/list', [UserController::class, 'index'])->name('post.list');
  */
-    Route::resource('posts',PostController::class);
+    Route::resource('posts', PostController::class);
 });
 
 Route::get('/forgotPassword', function () {

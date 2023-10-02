@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,7 +29,7 @@ class PostController extends Controller
     {
         $categories = Category::all()->mapWithKeys(fn ($categorie) => [$categorie->id => $categorie->name])->toArray();
         //dd($categories);
-        return view('post.add',['categories' => $categories]);
+        return view('post.add', ['categories' => $categories]);
     }
 
     /**
@@ -59,12 +60,13 @@ class PostController extends Controller
         return Redirect::to('/posts');
     }
 
-    /**
+    /**Posts selon l'id de Category en paramètre
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        //
+        $posts = Post::where('category_id', $id)->get();
+        return view("post.category-post", ['posts' => $posts]);
     }
 
     /**

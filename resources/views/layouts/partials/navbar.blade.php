@@ -32,7 +32,9 @@
                         </a>
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
-                                <li><a class="dropdown-item" href="index-lite.html">{{ $category->name }}</a></li>
+                                @csrf
+                                <li><a class="dropdown-item"
+                                        href="{{ route('posts.show', $category)}}">{{ $category->name }}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -43,8 +45,8 @@
                                 My Posts
                             </a>
                         </li>
-                        @endauth
-                        @guest
+                    @endauth
+                    @guest
                         <li class="nav-item">
                             <a class="nav-link" href="/login">Login</a>
                         </li>
