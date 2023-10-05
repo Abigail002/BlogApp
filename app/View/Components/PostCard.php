@@ -15,7 +15,8 @@ class PostCard extends Component
         public string $name,
         public string $date,
         public string $title,
-        public string $author
+        public string $author,
+        public string $image
     )
     {
         //

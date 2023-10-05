@@ -2,7 +2,7 @@
     <div class="blog-card card border-0">
         <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
             <a href="article.html" class="d-block">
-                <img src="/thumbnails/1.jpg" alt="" class="img-fluid post-thumbnail w-full h-full object-cover" />
+                <img src="{{ $image }}" alt="" class="img-fluid post-thumbnail w-full h-full object-cover" />
             </a>
         </div>
         <div class="card-body p-0 mt-6">

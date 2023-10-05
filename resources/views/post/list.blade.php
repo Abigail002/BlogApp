@@ -26,7 +26,7 @@
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-6 gy-10 gy-lg-16 pt-lg-15">
                         @forelse ($posts as $post)
                                 <x-post-card name="{{ $post->category->name }}" date="{{ $post->created_at }}"
-                                    title="{{ $post->title }}" author="{{ $post->user->name }}"></x-post-card>
+                                    title="{{ $post->title }}" author="{{ $post->user->name }}" image="{{ $post->path }}"></x-post-card>
                             @empty
                             <div class="center py-10 py-lg-15 bg-striped">
                                 <h3 class="text-white mb-2">Aucun Post</h3>
