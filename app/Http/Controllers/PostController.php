@@ -65,10 +65,16 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        $id = (int)$id;
         $posts = Post::where('category_id', $id)->get();
         return view("post.category-post", ['posts' => $posts]);
     }
 
+    public function showOnePost($id)
+    {
+        $post = Post::find($id);
+        return view('post.show', ['post' => $post]);
+    }
     /**
      * Show the form for editing the specified resource.
      */

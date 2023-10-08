@@ -1,7 +1,7 @@
 <div class="col">
     <div class="blog-card card border-0">
         <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
-            <a href="article.html" class="d-block">
+            <a href="{{ route('post',$id) }}" class="d-block">
                 <img src="{{ $image }}" alt="" class="img-fluid post-thumbnail w-full h-full object-cover" />
             </a>
         </div>
@@ -13,7 +13,7 @@
             </ul>
 
             <h4 class="post-title fw-medium mb-0">
-                <a href="article.html">{{ $title }}</a>
+                <a href="{{ route('post',$id)}}">{{ $title }}</a>
             </h4>
         </div>
     </div>

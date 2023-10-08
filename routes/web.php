@@ -26,7 +26,7 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/auth/post', [PostController::class, 'authPost'])->name('auth.post');
+    Route::get('/post/{id}', [PostController::class, 'showOnePost'])->name('post');
     /*Route::post('/add/post',[PostController::class, 'store'])->name('post.store');
     Route::get('/post/list', [UserController::class, 'index'])->name('post.list');
  */
