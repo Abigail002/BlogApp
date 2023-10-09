@@ -17,7 +17,7 @@ class PostCard extends Component
         public string $title,
         public string $author,
         public string $image,
-        public int $id
+        public string $id
     )
     {
         //
