@@ -2,7 +2,7 @@
     <div class="blog-card card border-0">
         <div class="card-header border-0 bg-transparent ratio ratio-6x4 rounded overflow-hidden">
             <a href="{{ route('post',$id) }}" class="d-block">
-                <img src="{{ $image }}" alt="" class="img-fluid post-thumbnail w-full h-full object-cover" />
+                <img src="{{ Storage::url($image) }}" alt="{{ $name }}" class="img-fluid post-thumbnail w-full h-full object-cover" />
             </a>
         </div>
         <div class="card-body p-0 mt-6">
