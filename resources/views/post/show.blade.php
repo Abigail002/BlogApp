@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="ratio ratio-21x9 rounded-4 overflow-hidden">
-                        <img src="../{{ $post->path }}" alt="" class="img-fluid post-thumbnail w-full h-full object-cover" />
+                        <img src="{{Storage::url($post->path)}}" alt="" class="img-fluid post-thumbnail w-full h-full object-cover" />
                     </div>
                     <div class="row justify-center mt-8">
                         <div class="col-lg-8">
@@ -46,7 +46,7 @@
                                 </div>
 
                                 <article class="blog-post">
-                                    {{ $post->content }}
+                                    {!! $post->content !!}
                                 </article>
                             </div>
                         </div>
